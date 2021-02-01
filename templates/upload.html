@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="text-indigo-600">Upload Files to Amazon S3 Bucket</h1>
+<form action="{{ url_for('upload_file') }}" method="post" class="shadow sm:rounded-md sm:overflow-hidden" enctype="multipart/form-data">
+    <div class="px-4 py-5 bg-white">
+        <div class="form-group mb-5">
+            <label for="file">Upload Image</label>
+            <input type="file" name="file" id="file" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md">
+        </div>
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Upload</button>
+    </div>
+</form>
+{% endblock %}

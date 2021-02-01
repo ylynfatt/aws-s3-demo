@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Demo</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
+</head>
+<body class="bg-gray-100">
+    <header class="relative z-10 border-b border-gray-200 bg-white mb-5">
+        <div class="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+              <a href="/" class="block">
+                AWS Demo
+              </a>
+            </div>
+        
+            <div class="flex text-sm">
+              <a href="{{ url_for('upload_file') }}" class="font-medium text-gray-500 hover:text-gray-900">
+                File Upload
+              </a>
+              <a href="{{ url_for('files') }}" class="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
+                View Files
+              </a>
+            </div>
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <main class="prose w-1/2">
+            {% block main %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="text-indigo-600">AWS S3 Files</h1>
+<div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="px-4 py-5 bg-white">
+        <p>A list files from my AWS S3 bucket.</p>
+        
+        <ul>
+            {% for file in files %}
+            <li>{{ file.key }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

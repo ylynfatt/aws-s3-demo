@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="prose prose-indigo text-indigo-600">AWS Demo</h1>
+
+<div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="px-4 py-5 bg-white">
+        <p>A simple Demo app to connect to AWS S3 to upload and list files.</p>
+
+        <h2>Requirements</h2>
+        <p>In order to run this app you will first need:</p> 
+        <ul>
+            <li>An Amazon AWS account. A Identity and Access Management (IAM) user with Amazon S3 permission (e.g. AmazonS3FullAccess)</li>
+            <li>An S3 bucket already created.</li>
+            <li>Python 3 and the Flask framework</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+            <li>Ensure you create the following files for your AWS Credentials: <code>~/.aws/credentials</code> and <code>~/.aws/config</code></li>
+            <li>In your <code>~/.aws/credentials</code> file you should have the following:
+                <p>
+                    <pre><code>
+[default]
+aws_access_key_id = YOUR_ACCESS_KEY
+aws_secret_access_key = YOUR_SECRET_KEY
+                    </code></pre>
+                </p>
+            </li>
+            <li>You may also want to set a default region. This can be done in the configuration file. By default, its location is at <code>~/.aws/config</code>:
+            <p>
+                <pre><code>
+[default]
+region=us-east-1
+                </code></pre>
+            </p></li>
+            <li>
+                Create Python Virtual environment:
+
+                <pre><code>$ python -m venv venv</code></pre>
+            </li>
+            <li>
+                Activate Python Virtual environment:
+
+                <pre><code>$ source venv/bin/activate</code></pre>                
+            </li>
+            <li>
+                Install application requirements:
+
+                <pre><code>$ pip install -r requirements.txt</code></pre>                
+            </li>
+            <li>
+                Start application development server:
+
+                <pre><code>$ python app.py</code></pre>                
+            </li>
+            <li>
+                Browse to <a href="http://localhost:8080">http://localhost:8080</a> 
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
