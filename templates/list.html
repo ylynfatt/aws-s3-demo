@@ -2,6 +2,7 @@
 
 {% block main %}
 <h1 class="text-indigo-600">AWS S3 Files</h1>
+{% include 'flash-messages.html' %}
 <div class="shadow sm:rounded-md sm:overflow-hidden">
     <div class="px-4 py-5 bg-white">
         <p>A list files from my AWS S3 bucket.</p>
@@ -11,6 +12,9 @@
             <li>{{ file.key }}</li>
             {% endfor %}
         </ul>
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+        <a href="{{ url_for('upload_file') }}" class="text-indigo-600">Upload another</a> 
     </div>
 </div>
 {% endblock %}

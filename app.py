@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, flash, render_template, url_for, request, redirect
 from werkzeug.utils import secure_filename
 import boto3
 import os
@@ -7,6 +7,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 AWS_BUCKET = 'coders-toolkit-aws-demo' # Change this to your Bucket name
 
 app = Flask(__name__)
+app.secret_key = "some-unique-secret-key"
 
 def allowed_file(filename):
     return '.' in filename and \
