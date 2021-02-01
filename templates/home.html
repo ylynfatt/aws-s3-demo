@@ -12,11 +12,6 @@
         <ul>
             <li>An Amazon AWS account. A Identity and Access Management (IAM) user with Amazon S3 permission (e.g. AmazonS3FullAccess)</li>
             <li>An S3 bucket already created.</li>
-            <li>Python 3 and the Flask framework</li>
-        </ul>
-
-        <h2>Instructions</h2>
-        <ol>
             <li>Ensure you create the following files for your AWS Credentials: <code>~/.aws/credentials</code> and <code>~/.aws/config</code></li>
             <li>In your <code>~/.aws/credentials</code> file you should have the following:
                 <p>
@@ -34,29 +29,16 @@ aws_secret_access_key = YOUR_SECRET_KEY
 region=us-east-1
                 </code></pre>
             </p></li>
-            <li>
-                Create Python Virtual environment:
+        </ul>
 
-                <pre><code>$ python -m venv venv</code></pre>
-            </li>
+        <h2>Instructions</h2>
+        <ol>
             <li>
-                Activate Python Virtual environment:
-
-                <pre><code>$ source venv/bin/activate</code></pre>                
+                Visit the <a href="{{ url_for('upload_file') }}">Upload file</a> page.
             </li>
-            <li>
-                Install application requirements:
-
-                <pre><code>$ pip install -r requirements.txt</code></pre>                
-            </li>
-            <li>
-                Start application development server:
-
-                <pre><code>$ python app.py</code></pre>                
-            </li>
-            <li>
-                Browse to <a href="http://localhost:8080">http://localhost:8080</a> 
-            </li>
+            <li>Select an image file to upload and then select Upload.</li>
+            <li>Next, visit the <a href="{{ url_for('files') }}">View Files</a> page and see the list of files currently in the S3 bucket.</li>
+            <li>You can also check your Amazon S3 account to see that the file also shows up there.</li>
         </ol>
     </div>
 </div>

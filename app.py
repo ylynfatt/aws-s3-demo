@@ -34,6 +34,8 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             s3.Bucket(AWS_BUCKET).put_object(Key=filename, Body=file)
+
+            flash('File Successfully uploaded')
             return redirect(url_for('files'))
     return render_template('upload.html')
 
